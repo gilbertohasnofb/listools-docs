@@ -1,0 +1,1426 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Welcome to listools’s documentation! &#8212; listools 2.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-listools-s-documentation">
+<h1>Welcome to listools’s documentation!<a class="headerlink" href="#welcome-to-listools-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="module-listools">
+<span id="the-listools-package"></span><h1>The <cite>listools</cite> package<a class="headerlink" href="#module-listools" title="Permalink to this headline">¶</a></h1>
+<p><cite>listools</cite> is a Python 3 package of which provides utility functions for
+dealing with lists in Python 3. <cite>listools</cite> supports Python version 3.5 and
+newer. You can install it using <cite>pip install listools</cite>.</p>
+<p>Bugs can be reported to <a class="reference external" href="https://github.com/gilbertohasnofb/listools/issues">https://github.com/gilbertohasnofb/listools/issues</a>.</p>
+<p>This package contains four modules: <cite>flatools</cite>, <cite>iterz</cite>, <cite>listutils</cite> and
+<cite>llogic</cite>. The complete list of functions available is:</p>
+<ul class="simple">
+<li><cite>flatools.flatten_index(element, input_list)</cite></li>
+<li><cite>flatools.flatten_join(*input_lists)</cite></li>
+<li><cite>flatools.flatten_len(input_list)</cite></li>
+<li><cite>flatools.flatten_max(input_list, *[, key, default])</cite></li>
+<li><cite>flatools.flatten_min(input_list, *[, key, default])</cite></li>
+<li><cite>flatools.flatten_mixed_type(input_list)</cite></li>
+<li><cite>flatools.flatten_reverse(input_list)</cite></li>
+<li><cite>flatools.flatten_single_type(input_list)</cite></li>
+<li><cite>flatools.flatten_sorted(input_list, *[, key, reverse])</cite></li>
+<li><cite>flatools.flatten_sum(input_list[, start])</cite></li>
+<li><cite>flatools.flatten_zip_cycle(*input_lists)</cite></li>
+<li><cite>flatools.flatten(input_list)</cite></li>
+<li><cite>flatools.pflatten(input_list[, depth])</cite></li>
+<li><cite>iterz.cycle_until_index(input_iter, i)</cite></li>
+<li><cite>iterz.inf_cycle(input_iter)</cite></li>
+<li><cite>iterz.iter_mask(input_iter, mask)</cite></li>
+<li><cite>iterz.ncycles(input_iter, n)</cite></li>
+<li><cite>iterz.zip_cycle(*input_iters)</cite></li>
+<li><cite>iterz.zip_inf_cycle(*input_iters)</cite></li>
+<li><cite>iterz.zip_longest(*input_iters[, default])</cite></li>
+<li><cite>iterz.zip_syzygy(*input_iters)</cite></li>
+<li><cite>listutils.list_lcm(input_list)</cite></li>
+<li><cite>listutils.list_mask(input_list, mask)</cite></li>
+<li><cite>listutils.list_mask_cycle(input_list, mask)</cite></li>
+<li><cite>listutils.list_gcd(input_list)</cite></li>
+<li><cite>llogic.difference(list_1, list_2)</cite></li>
+<li><cite>llogic.intersection(list_1, list_2)</cite></li>
+<li><cite>llogic.is_contained(list_1, list_2)</cite></li>
+<li><cite>llogic.mixed_type(input_list)</cite></li>
+<li><cite>llogic.single_type(input_list)</cite></li>
+<li><cite>llogic.symmetric_difference(list_1, list_2)</cite></li>
+<li><cite>llogic.union(list_1, list_2)</cite></li>
+</ul>
+<p>All functions have a <cite>__doc__</cite> attribute with usage instructions.</p>
+<p>This library is published under the MIT License.</p>
+</div>
+<div class="section" id="module-listools.flatools">
+<span id="flatools-module"></span><h1><cite>flatools</cite> module<a class="headerlink" href="#module-listools.flatools" title="Permalink to this headline">¶</a></h1>
+<p>The module <cite>flatools</cite> contains functions that deal with flatten lists. The
+full list of available functions is:</p>
+<ul class="simple">
+<li><cite>flatools.flatten_index(element, input_list)</cite></li>
+<li><cite>flatools.flatten_join(*input_lists)</cite></li>
+<li><cite>flatools.flatten_len(input_list)</cite></li>
+<li><cite>flatools.flatten_max(input_list, *[, key, default])</cite></li>
+<li><cite>flatools.flatten_min(input_list, *[, key, default])</cite></li>
+<li><cite>flatools.flatten_mixed_type(input_list)</cite></li>
+<li><cite>flatools.flatten_reverse(input_list)</cite></li>
+<li><cite>flatools.flatten_single_type(input_list)</cite></li>
+<li><cite>flatools.flatten_sorted(input_list, *[, key, reverse])</cite></li>
+<li><cite>flatools.flatten_sum(input_list[, start])</cite></li>
+<li><cite>flatools.flatten_zip_cycle(*input_lists)</cite></li>
+<li><cite>flatools.flatten(input_list)</cite></li>
+<li><cite>flatools.pflatten(input_list[, depth])</cite></li>
+</ul>
+<p>All functions have a <cite>__doc__</cite> attribute with usage instructions.</p>
+<p>This library is published under the MIT License.</p>
+<dl class="function">
+<dt id="listools.flatools.flatten">
+<code class="descclassname">listools.flatools.</code><code class="descname">flatten</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten" title="Permalink to this definition">¶</a></dt>
+<dd><p>Completely flattens a list containing any number of nested subslists into a
+one dimensional list. It is equivalent to flatools.pflatten() with
+an infinitely large depth. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">[1, 2, 3, 4, 5]</span>
+</pre></div>
+</div>
+<p>Notice that the list themselves can be made out of any datatypes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mf">2.2</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="kc">None</span><span class="p">]],</span> <span class="p">[</span><span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">[1, 2.2, True, &#39;foo&#39;, (1, 4), None, 3+2j, {&#39;a&#39;: 1}]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.flatools.flatten_index">
+<code class="descclassname">listools.flatools.</code><code class="descname">flatten_index</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the length of a flatten list (that is, it counts all elements in
+all of its subslists). Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_index</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">alist</span><span class="p">)</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<p>The datatypes of the elements of the list do not matter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mf">2.2</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="kc">None</span><span class="p">]],</span> <span class="p">[</span><span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_index</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">alist</span><span class="p">)</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+<p>Just like the default behaviour of the flatten_index() method of a list,
+flatten_index raises a ValueError if an element is not found in a list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_index</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">alist</span><span class="p">)</span>
+<span class="go">ValueError: 7 is not in list</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.flatools.flatten_join">
+<code class="descclassname">listools.flatools.</code><code class="descname">flatten_join</code><span class="sig-paren">(</span><em>*input_lists</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_join" title="Permalink to this definition">¶</a></dt>
+<dd><p>Completely flattens and concatenates an arbitrary number of input lists
+containing any number of nested subslists. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_join</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="go">[1, 2, 3, 4, 5, 6, 7, 8]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[[[</span><span class="mi">4</span><span class="p">],</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">6</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_join</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="go">[1, 2, 3, 4, 5, 6]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clist</span> <span class="o">=</span> <span class="p">[[[</span><span class="mi">9</span><span class="p">],</span> <span class="mi">10</span><span class="p">],</span> <span class="mi">11</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_join</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">clist</span><span class="p">)</span>
+<span class="go">[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]</span>
+</pre></div>
+</div>
+<p>Notice that the list themselves can be made out of any datatypes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mf">2.2</span><span class="p">,</span> <span class="kc">True</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="kc">None</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_join</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">clist</span><span class="p">)</span>
+<span class="go">[1, 2.2, True, &#39;foo&#39;, (1, 4), None, 3+2j, {&#39;a&#39;: 1}]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.flatools.flatten_len">
+<code class="descclassname">listools.flatools.</code><code class="descname">flatten_len</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_len" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the flatten_length of a flatten list (that is, it counts all
+elements in all of its subslists). Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_len</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">6</span>
+</pre></div>
+</div>
+<p>The datatypes of the elements of the list do not matter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mf">2.2</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="kc">None</span><span class="p">]],</span> <span class="p">[</span><span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_len</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">8</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.flatools.flatten_max">
+<code class="descclassname">listools.flatools.</code><code class="descname">flatten_max</code><span class="sig-paren">(</span><em>input_list</em>, <em>*</em><span class="optional">[</span>, <em>key</em>, <em>default</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the largest element of a  flattened list containing any number of
+nested subslists. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_max</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">10</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_max</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+<p>The list can also be made out of floats:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">1.73</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.14</span><span class="p">,</span> <span class="mf">9.41</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.56</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.03</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_max</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">9.41</span>
+</pre></div>
+</div>
+<p>Or it can be made out of a mixture of integers and floats:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mf">7.8</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">3.1</span><span class="p">,</span> <span class="mf">6.6</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_max</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">7.8</span>
+</pre></div>
+</div>
+<p>There are two optional arguments that can be used. The first is a called
+‘key’ and takes a function that serves as a key for the sort comparison.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">flatten_max</span><span class="p">(</span><span class="n">alist</span><span class="p">))</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">flatten_max</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">abs</span><span class="p">))</span>
+<span class="go">-5</span>
+</pre></div>
+</div>
+<p>The second is ‘default’, which is the value that the function defaults to
+when the input is an empty list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">flatten_max</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">default</span><span class="o">=-</span><span class="mi">100</span><span class="p">))</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">flatten_max</span><span class="p">(</span><span class="n">blist</span><span class="p">,</span> <span class="n">default</span><span class="o">=-</span><span class="mi">100</span><span class="p">))</span>
+<span class="go">-100</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.flatools.flatten_min">
+<code class="descclassname">listools.flatools.</code><code class="descname">flatten_min</code><span class="sig-paren">(</span><em>input_list</em>, <em>*</em><span class="optional">[</span>, <em>key</em>, <em>default</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_min" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the smallest element of a  flattened list containing any number of
+nested subslists. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_min</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_min</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p>The list can also be made out of floats:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">1.73</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.14</span><span class="p">,</span> <span class="mf">9.41</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.56</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.03</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_min</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">-3.14</span>
+</pre></div>
+</div>
+<p>Or it can be made out of a mixture of integers and floats:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mf">7.8</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">3.1</span><span class="p">,</span> <span class="mf">6.6</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_min</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">-3.1</span>
+</pre></div>
+</div>
+<p>There are two optional arguments that can be used. The first is a called
+‘key’ and takes a function that serves as a key for the sort comparison.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">flatten_min</span><span class="p">(</span><span class="n">alist</span><span class="p">))</span>
+<span class="go">-5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">flatten_min</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">abs</span><span class="p">))</span>
+<span class="go">-1</span>
+</pre></div>
+</div>
+<p>The second is ‘default’, which is the value that the function defaults to
+when the input is an empty list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">flatten_min</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">default</span><span class="o">=-</span><span class="mi">100</span><span class="p">))</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">flatten_min</span><span class="p">(</span><span class="n">blist</span><span class="p">,</span> <span class="n">default</span><span class="o">=-</span><span class="mi">100</span><span class="p">))</span>
+<span class="go">-100</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.flatools.flatten_mixed_type">
+<code class="descclassname">listools.flatools.</code><code class="descname">flatten_mixed_type</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_mixed_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns False if all elements of the flattened input_list are of the same
+type and True if they are not. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_mixed_type</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_mixed_type</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">1.73</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.14</span><span class="p">,</span> <span class="mf">9.41</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.56</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.03</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_mixed_type</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mf">7.8</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">3.1</span><span class="p">,</span> <span class="mf">6.6</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_mixed_type</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">)]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_mixed_type</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Note that empty lists return False:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_mixed_type</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.flatools.flatten_reverse">
+<code class="descclassname">listools.flatools.</code><code class="descname">flatten_reverse</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_reverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Completely flattens a list containing any number of nested subslists into a
+flatten_reversely sorted one dimensional list. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_reverse</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_reverse</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">[5, 4, 3, 2, 1]</span>
+</pre></div>
+</div>
+<p>The list can also be made out of floats:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">1.73</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.14</span><span class="p">,</span> <span class="mf">9.41</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.56</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.03</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_reverse</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">[9.41, 5.56, 1.73, -1.03, -3.14]</span>
+</pre></div>
+</div>
+<p>Or it can be made out of a mixture of integers and floats:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mf">7.8</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">3.1</span><span class="p">,</span> <span class="mf">6.6</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_reverse</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">[7.8, 6.6, 5, 3, 1.4, -3.1]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.flatools.flatten_single_type">
+<code class="descclassname">listools.flatools.</code><code class="descname">flatten_single_type</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_single_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if all elements of the flattened input_list are of the same
+type and False if they are not. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_single_type</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_single_type</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">1.73</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.14</span><span class="p">,</span> <span class="mf">9.41</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.56</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.03</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_single_type</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mf">7.8</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">3.1</span><span class="p">,</span> <span class="mf">6.6</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_single_type</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">)]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_single_type</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>Note that empty lists return False:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_single_type</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.flatools.flatten_sorted">
+<code class="descclassname">listools.flatools.</code><code class="descname">flatten_sorted</code><span class="sig-paren">(</span><em>input_list</em>, <em>*</em><span class="optional">[</span>, <em>key</em>, <em>reverse</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_sorted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Completely flattens a list containing any number of nested subslists into a
+flatten_sorted one dimensional list. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_sorted</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_sorted</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">[1, 2, 3, 4, 5]</span>
+</pre></div>
+</div>
+<p>The list can also be made out of floats:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">1.73</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.14</span><span class="p">,</span> <span class="mf">9.41</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.56</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.03</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_sorted</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">[-3.14, -1.03, 1.73, 5.56, 9.41]</span>
+</pre></div>
+</div>
+<p>Or it can be made out of a mixture of integers and floats:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mf">7.8</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">3.1</span><span class="p">,</span> <span class="mf">6.6</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_sorted</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">[-3.1, 1.4, 3, 5, 6.6, 7.8]</span>
+</pre></div>
+</div>
+<p>There are two optional arguments that can be used. The first is a called
+‘key’ and takes a function that serves as a key for the sort comparison.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">flatten_sorted</span><span class="p">(</span><span class="n">alist</span><span class="p">))</span>
+<span class="go">[-5, -2, -1, 3, 4]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">flatten_sorted</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">abs</span><span class="p">))</span>
+<span class="go">[-1, -2, 3, 4, -5]</span>
+</pre></div>
+</div>
+<p>The second is ‘reverse’, which reverses the order of the output list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">flatten_sorted</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="go">[5, 4, 3, 2, 1]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.flatools.flatten_sum">
+<code class="descclassname">listools.flatools.</code><code class="descname">flatten_sum</code><span class="sig-paren">(</span><em>input_list</em><span class="optional">[</span>, <em>start</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_sum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sums all values of the list, including any nested subslists. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_sum</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">21</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_sum</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">6</span>
+</pre></div>
+</div>
+<p>The list can also be made out of floats:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="p">[</span><span class="mf">2.2</span><span class="p">,</span> <span class="p">[</span><span class="mf">3.3</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_sum</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">6.6</span>
+</pre></div>
+</div>
+<p>Or it can contain a mix of integers and floats:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mf">2.1</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mf">4.1</span><span class="p">]]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_sum</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">10.2</span>
+</pre></div>
+</div>
+<p>It can also take an optional argument named ‘start’ which defines the
+starting value of the sum.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_sum</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="go">10</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.flatools.flatten_zip_cycle">
+<code class="descclassname">listools.flatools.</code><code class="descname">flatten_zip_cycle</code><span class="sig-paren">(</span><em>*input_lists</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_zip_cycle" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is very nearly identical to flatools.flatten_zip_cycle except
+that it also flattens all lists before zipping and cycling them. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="mi">8</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">flatools</span><span class="o">.</span><span class="n">flatten_zip_cycle</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+<span class="go">1 4</span>
+<span class="go">2 5</span>
+<span class="go">1 6</span>
+<span class="go">2 7</span>
+<span class="go">1 8</span>
+</pre></div>
+</div>
+<p>It also works with multiple lists:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="p">[[[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">4</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]],</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">flatools</span><span class="o">.</span><span class="n">flatten_zip_cycle</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
+<span class="go">1 1 1 1</span>
+<span class="go">2 2 2 2</span>
+<span class="go">1 3 3 3</span>
+<span class="go">2 1 4 4</span>
+<span class="go">1 2 1 5</span>
+</pre></div>
+</div>
+<p>It also works with lists containing any datatypes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">flatools</span><span class="o">.</span><span class="n">flatten_zip_cycle</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+<span class="go">1 False</span>
+<span class="go">2.0 bar</span>
+<span class="go">foo (1, 4)</span>
+<span class="go">True False</span>
+<span class="go">None bar</span>
+</pre></div>
+</div>
+<p>Note that unlike flatools.flatten_zip_cycle(), this function accepts only
+lists as input due to its flatenning function.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.flatools.pflatten">
+<code class="descclassname">listools.flatools.</code><code class="descname">pflatten</code><span class="sig-paren">(</span><em>input_list</em><span class="optional">[</span>, <em>depth</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.pflatten" title="Permalink to this definition">¶</a></dt>
+<dd><p>Partially flattens a list containing subslists as elements. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">pflatten</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[[</span><span class="mi">4</span><span class="p">],</span> <span class="mi">5</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">pflatten</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">[1, 2, 3, [[4], 5]]</span>
+</pre></div>
+</div>
+<p>Use the depth argument (which should always be an integer) when wanting to
+flatten nested sublists:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">pflatten</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">[1, 2, 3, [4], 5]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">pflatten</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">[1, 2, 3, 4, 5]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">pflatten</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="go">[1, 2, 3, 4, 5]</span>
+</pre></div>
+</div>
+<p>Notice that the list themselves can be made out of any datatypes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mf">2.2</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="kc">None</span><span class="p">]],</span> <span class="p">[</span><span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">[1, 2.2, True, &#39;foo&#39;, (1, 4), None, 3+2j, {&#39;a&#39;: 1}]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-listools.iterz">
+<span id="iterz-module"></span><h1><cite>iterz</cite> module<a class="headerlink" href="#module-listools.iterz" title="Permalink to this headline">¶</a></h1>
+<p>The module <cite>iterz</cite> contains functions that manipualte lists as iterators.
+The full list of available functions is:</p>
+<ul class="simple">
+<li><cite>iterz.cycle_until_index(input_iter, i)</cite></li>
+<li><cite>iterz.inf_cycle(input_iter)</cite></li>
+<li><cite>iterz.iter_mask(input_iter, mask)</cite></li>
+<li><cite>iterz.ncycles(input_iter, n)</cite></li>
+<li><cite>iterz.zip_cycle(*input_iters)</cite></li>
+<li><cite>iterz.zip_inf_cycle(*input_iters)</cite></li>
+<li><cite>iterz.zip_longest(*input_iters[, default])</cite></li>
+<li><cite>iterz.zip_syzygy(*input_iters)</cite></li>
+</ul>
+<p>All functions have a <cite>__doc__</cite> attribute with usage instructions.</p>
+<p>This library is published under the MIT License.</p>
+<dl class="function">
+<dt id="listools.iterz.cycle_until_index">
+<code class="descclassname">listools.iterz.</code><code class="descname">cycle_until_index</code><span class="sig-paren">(</span><em>input_iter</em>, <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.iterz.cycle_until_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will cycle an iterator up to a certain index (inclusive). Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">32</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterz</span><span class="o">.</span><span class="n">cycle_until_index</span><span class="p">(</span><span class="n">atuple</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="go">2</span>
+<span class="go">4</span>
+<span class="go">8</span>
+<span class="go">16</span>
+</pre></div>
+</div>
+<p>In fact, it works with any iterable containing any datatypes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">atuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterz</span><span class="o">.</span><span class="n">cycle_until_index</span><span class="p">(</span><span class="n">atuple</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="go">foo</span>
+<span class="go">3.0</span>
+<span class="go">3+2j</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.iterz.inf_cycle">
+<code class="descclassname">listools.iterz.</code><code class="descname">inf_cycle</code><span class="sig-paren">(</span><em>input_iter</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.iterz.inf_cycle" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will cycle an iterator indefinitely. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inf_cycle_iter</span> <span class="o">=</span> <span class="n">iterz</span><span class="o">.</span><span class="n">inf_cycle</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">inf_cycle_iter</span><span class="o">.</span><span class="fm">__next__</span><span class="p">())</span>
+<span class="go">1</span>
+<span class="go">2</span>
+<span class="go">4</span>
+<span class="go">8</span>
+<span class="go">1</span>
+<span class="go">2</span>
+<span class="go">4</span>
+<span class="go">8</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p>In fact, it works with any iterable containing any datatypes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">atuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">inf_cycle_iter</span> <span class="o">=</span> <span class="n">iterz</span><span class="o">.</span><span class="n">inf_cycle</span><span class="p">(</span><span class="n">atuple</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">inf_cycle_iter</span><span class="o">.</span><span class="fm">__next__</span><span class="p">())</span>
+<span class="go">1</span>
+<span class="go">foo</span>
+<span class="go">3.0</span>
+<span class="go">1</span>
+<span class="go">foo</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.iterz.iter_mask">
+<code class="descclassname">listools.iterz.</code><code class="descname">iter_mask</code><span class="sig-paren">(</span><em>input_iter</em>, <em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.iterz.iter_mask" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function takes an input iterator and applies a mask to it, yielding
+values according to the mastk. The mask should be a list containing 1’s and
+0’s, or alternatively True’s and False’s. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mask</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">listutils</span><span class="o">.</span><span class="n">iter_mask</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">mask</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mask</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">listutils</span><span class="o">.</span><span class="n">iter_mask</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">mask</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<p>If the mask is shorter than the input iterator, it loops:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mask</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">listutils</span><span class="o">.</span><span class="n">iter_mask</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">mask</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="go">3</span>
+<span class="go">5</span>
+<span class="go">7</span>
+<span class="go">9</span>
+</pre></div>
+</div>
+<p>The input iterator can contain any datatypes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mask</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">listutils</span><span class="o">.</span><span class="n">iter_mask</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">mask</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="go">True</span>
+<span class="go">&#39;foo&#39;</span>
+<span class="go">None</span>
+<span class="go">3+2j</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.iterz.ncycle">
+<code class="descclassname">listools.iterz.</code><code class="descname">ncycle</code><span class="sig-paren">(</span><em>input_iter</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.iterz.ncycle" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will cycle an iterator a certain number of times. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterz</span><span class="o">.</span><span class="n">ncycle</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="go">2</span>
+<span class="go">4</span>
+<span class="go">8</span>
+<span class="go">1</span>
+<span class="go">2</span>
+<span class="go">4</span>
+<span class="go">8</span>
+</pre></div>
+</div>
+<p>In fact, it works with any iterable containing any datatypes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">atuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterz</span><span class="o">.</span><span class="n">ncycle</span><span class="p">(</span><span class="n">atuple</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="go">foo</span>
+<span class="go">3.0</span>
+<span class="go">1</span>
+<span class="go">foo</span>
+<span class="go">3.0</span>
+<span class="go">1</span>
+<span class="go">foo</span>
+<span class="go">3.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.iterz.zip_cycle">
+<code class="descclassname">listools.iterz.</code><code class="descname">zip_cycle</code><span class="sig-paren">(</span><em>*input_iters</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.iterz.zip_cycle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to zip but cycles smaller lists or iterables until the longest one
+is output. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">iterz</span><span class="o">.</span><span class="n">zip_cycle</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+<span class="go">1 4</span>
+<span class="go">2 5</span>
+<span class="go">1 6</span>
+<span class="go">2 7</span>
+<span class="go">1 8</span>
+</pre></div>
+</div>
+<p>It also works with multiple lists:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dlist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">iterz</span><span class="o">.</span><span class="n">zip_cycle</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">clist</span><span class="p">,</span> <span class="n">dlist</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
+<span class="go">1 1 1 1</span>
+<span class="go">2 2 2 2</span>
+<span class="go">1 3 3 3</span>
+<span class="go">2 1 4 4</span>
+<span class="go">1 2 1 5</span>
+</pre></div>
+</div>
+<p>In fact, it works with any iterable containing any datatypes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;abcde&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">iterz</span><span class="o">.</span><span class="n">zip_cycle</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<span class="go">1 1.0 a</span>
+<span class="go">2 2.0 b</span>
+<span class="go">3 3.0 c</span>
+<span class="go">1 4.0 d</span>
+<span class="go">2 5.0 e</span>
+<span class="go">3 6.0 a</span>
+<span class="go">1 7.0 b</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.iterz.zip_inf_cycle">
+<code class="descclassname">listools.iterz.</code><code class="descname">zip_inf_cycle</code><span class="sig-paren">(</span><em>*input_iters</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.iterz.zip_inf_cycle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to zip but cycles all lists indefinitely. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zip_inf_cycle_iter</span> <span class="o">=</span> <span class="n">iterz</span><span class="o">.</span><span class="n">zip_inf_cycle</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">zip_inf_cycle_iter</span><span class="o">.</span><span class="fm">__next__</span><span class="p">())</span>
+<span class="go">1 4</span>
+<span class="go">2 5</span>
+<span class="go">1 6</span>
+<span class="go">2 7</span>
+<span class="go">1 8</span>
+<span class="go">2 4</span>
+<span class="go">1 5</span>
+<span class="go">2 6</span>
+<span class="go">1 7</span>
+</pre></div>
+</div>
+<p>It also works with multiple lists:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dlist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zip_inf_cycle_iter</span> <span class="o">=</span> <span class="n">iterz</span><span class="o">.</span><span class="n">zip_inf_cycle</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">clist</span><span class="p">,</span> <span class="n">dlist</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">zip_inf_cycle_iter</span><span class="o">.</span><span class="fm">__next__</span><span class="p">())</span>
+<span class="go">1 1 1 1</span>
+<span class="go">2 2 2 2</span>
+<span class="go">1 3 3 3</span>
+<span class="go">2 1 4 4</span>
+<span class="go">1 2 1 5</span>
+<span class="go">1 3 2 1</span>
+<span class="go">2 1 3 2</span>
+</pre></div>
+</div>
+<p>In fact, it works with any iterable containing any datatypes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;abcde&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zip_inf_cycle_iter</span> <span class="o">=</span> <span class="n">iterz</span><span class="o">.</span><span class="n">zip_inf_cycle</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">zip_inf_cycle_iter</span><span class="o">.</span><span class="fm">__next__</span><span class="p">())</span>
+<span class="go">1 1.0 a</span>
+<span class="go">2 2.0 b</span>
+<span class="go">3 3.0 c</span>
+<span class="go">1 4.0 d</span>
+<span class="go">2 5.0 e</span>
+<span class="go">3 6.0 a</span>
+<span class="go">1 7.0 b</span>
+<span class="go">2 1.0 c</span>
+<span class="go">3 2.0 d</span>
+<span class="go">1 3.0 e</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.iterz.zip_longest">
+<code class="descclassname">listools.iterz.</code><code class="descname">zip_longest</code><span class="sig-paren">(</span><em>*input_iters</em><span class="optional">[</span>, <em>default</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#listools.iterz.zip_longest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to zip_cycle but yields values until the longest of the input
+iterators is exhausted. Shorter iterators yields None when exhausted.
+Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">iterz</span><span class="o">.</span><span class="n">zip_longest</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+<span class="go">1 4</span>
+<span class="go">2 5</span>
+<span class="go">None 6</span>
+<span class="go">None 7</span>
+<span class="go">None 8</span>
+</pre></div>
+</div>
+<p>It also works with multiple lists:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dlist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">iterz</span><span class="o">.</span><span class="n">zip_longest</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">clist</span><span class="p">,</span> <span class="n">dlist</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
+<span class="go">1 1 1 1</span>
+<span class="go">2 2 2 2</span>
+<span class="go">None 3 3 3</span>
+<span class="go">None None 4 4</span>
+<span class="go">None None None 5</span>
+</pre></div>
+</div>
+<p>In fact, it works with any iterable containing any datatypes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;abcde&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">iterz</span><span class="o">.</span><span class="n">zip_longest</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<span class="go">1 1.0 a</span>
+<span class="go">2 2.0 b</span>
+<span class="go">3 3.0 c</span>
+<span class="go">None 4.0 d</span>
+<span class="go">None 5.0 e</span>
+<span class="go">None 6.0 None</span>
+<span class="go">None 7.0 None</span>
+</pre></div>
+</div>
+<p>The value None can be changed using the keyword argument default:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">iterz</span><span class="o">.</span><span class="n">zip_longest</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">clist</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
+<span class="go">1 1 1</span>
+<span class="go">2 2 2</span>
+<span class="go">0 3 3</span>
+<span class="go">0 4 4</span>
+<span class="go">0 0 5</span>
+<span class="go">0 0 6</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.iterz.zip_syzygy">
+<code class="descclassname">listools.iterz.</code><code class="descname">zip_syzygy</code><span class="sig-paren">(</span><em>*input_iters</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.iterz.zip_syzygy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to zip but cycles lists until all of them are exhausted at the same
+time (that is, when the next output tuple would be the same as the very
+first yielded one). Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">iterz</span><span class="o">.</span><span class="n">zip_syzygy</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+<span class="go">1 4</span>
+<span class="go">2 5</span>
+<span class="go">1 6</span>
+<span class="go">2 7</span>
+<span class="go">1 8</span>
+<span class="go">2 4</span>
+<span class="go">1 5</span>
+<span class="go">2 6</span>
+<span class="go">1 7</span>
+<span class="go">2 8</span>
+</pre></div>
+</div>
+<p>It also works with multiple lists:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dlist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">iterz</span><span class="o">.</span><span class="n">zip_syzygy</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">,</span> <span class="n">clist</span><span class="p">,</span> <span class="n">dlist</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
+<span class="go">1 1 1 4</span>
+<span class="go">2 2 2 5</span>
+<span class="go">1 3 3 6</span>
+<span class="go">2 1 4 4</span>
+<span class="go">1 2 1 5</span>
+<span class="go">2 3 2 6</span>
+<span class="go">1 1 3 4</span>
+<span class="go">2 2 4 5</span>
+<span class="go">1 3 1 6</span>
+<span class="go">2 1 2 4</span>
+<span class="go">1 2 3 5</span>
+<span class="go">2 3 4 6</span>
+</pre></div>
+</div>
+<p>In fact, it works with any iterable containing any datatypes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;abc&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">iterz</span><span class="o">.</span><span class="n">zip_syzygy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<span class="go">1 1.0 a</span>
+<span class="go">2 2.0 b</span>
+<span class="go">1 3.0 c</span>
+<span class="go">2 1.0 a</span>
+<span class="go">1 2.0 b</span>
+<span class="go">2 3.0 c</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-listools.listutils">
+<span id="listutils-module"></span><h1><cite>listutils</cite> module<a class="headerlink" href="#module-listools.listutils" title="Permalink to this headline">¶</a></h1>
+<p>The module <cite>listutils</cite> contains functions that apply simple mathematical
+operations to lists. The full list of available functions is:</p>
+<ul class="simple">
+<li><cite>listutils.list_lcm(input_list)</cite></li>
+<li><cite>listutils.list_mask(input_list, mask)</cite></li>
+<li><cite>listutils.list_mask_cycle(input_list, mask)</cite></li>
+<li><cite>listutils.list_gcd(input_list)</cite></li>
+</ul>
+<p>All functions have a <cite>__doc__</cite> attribute with usage instructions.</p>
+<p>This library is published under the MIT License.</p>
+<dl class="function">
+<dt id="listools.listutils.list_gcd">
+<code class="descclassname">listools.listutils.</code><code class="descname">list_gcd</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.listutils.list_gcd" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the greatest common divisor of a list of integers.
+Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">listutils</span><span class="o">.</span><span class="n">list_gcd</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">74</span><span class="p">,</span> <span class="mi">259</span><span class="p">,</span> <span class="mi">185</span><span class="p">,</span> <span class="mi">333</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">listutils</span><span class="o">.</span><span class="n">list_gcd</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">37</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.listutils.list_lcm">
+<code class="descclassname">listools.listutils.</code><code class="descname">list_lcm</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.listutils.list_lcm" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns the least common multiple of a list of integers.
+Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">listutils</span><span class="o">.</span><span class="n">list_lcm</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">6</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">listutils</span><span class="o">.</span><span class="n">list_lcm</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">168</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.listutils.list_mask">
+<code class="descclassname">listools.listutils.</code><code class="descname">list_mask</code><span class="sig-paren">(</span><em>input_list</em>, <em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.listutils.list_mask" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function takes an input list and applies a mask to it, outputting a
+new list. The mask should be a list containing 1’s and 0’s, or
+alternatively True’s and False’s. If the mask is shorter than the input
+list then the input list will be considered only up to the mask length.
+Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mask</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">listutils</span><span class="o">.</span><span class="n">list_mask</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">mask</span><span class="p">)</span>
+<span class="go">[1, 3]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mask</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">listutils</span><span class="o">.</span><span class="n">list_mask</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">mask</span><span class="p">)</span>
+<span class="go">[1, 4]</span>
+</pre></div>
+</div>
+<p>If the mask is shorter than the list, the :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mask</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">listutils</span><span class="o">.</span><span class="n">list_mask</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">mask</span><span class="p">)</span>
+<span class="go">[1]</span>
+</pre></div>
+</div>
+<p>If the mask is shorter than the input list then the input list will be
+considered only up to the mask length:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mask</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">listutils</span><span class="o">.</span><span class="n">list_mask</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">mask</span><span class="p">)</span>
+<span class="go">[1, True]</span>
+</pre></div>
+</div>
+<p>The input list can be empty, in which case an empty list is return. On the
+other hand, the mask argument cannot be an empty list.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.listutils.list_mask_cycle">
+<code class="descclassname">listools.listutils.</code><code class="descname">list_mask_cycle</code><span class="sig-paren">(</span><em>input_list</em>, <em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.listutils.list_mask_cycle" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function takes an input list and applies a mask to it, outputting a
+new list. The mask should be a list containing 1’s and 0’s, or
+alternatively True’s and False’s. If the mask is shorter than the list,
+the mask is cycled. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mask</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">listutils</span><span class="o">.</span><span class="n">list_mask_cycle</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">mask</span><span class="p">)</span>
+<span class="go">[1, 3]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mask</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">listutils</span><span class="o">.</span><span class="n">list_mask_cycle</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">mask</span><span class="p">)</span>
+<span class="go">[1, 4]</span>
+</pre></div>
+</div>
+<p>If the mask is shorter than the list, it loops:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mask</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">listutils</span><span class="o">.</span><span class="n">list_mask_cycle</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">mask</span><span class="p">)</span>
+<span class="go">[1, 3, 5, 7, 9]</span>
+</pre></div>
+</div>
+<p>The input list can contain any datatypes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mask</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">listutils</span><span class="o">.</span><span class="n">list_mask_cycle</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">mask</span><span class="p">)</span>
+<span class="go">[1, True, &#39;foo&#39;, None, 3+2j]</span>
+</pre></div>
+</div>
+<p>The input list can be empty, in which case an empty list is return. On the
+other hand, the mask argument cannot be an empty list.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-listools.llogic">
+<span id="llogic-module"></span><h1><cite>llogic</cite> module<a class="headerlink" href="#module-listools.llogic" title="Permalink to this headline">¶</a></h1>
+<p>The module <cite>llogic</cite> contains functions that deal with logic operations on
+lists. The full list of available functions is:</p>
+<ul class="simple">
+<li><cite>llogic.difference(list_1, list_2)</cite></li>
+<li><cite>llogic.intersection(list_1, list_2)</cite></li>
+<li><cite>llogic.is_contained(list_1, list_2)</cite></li>
+<li><cite>llogic.mixed_type(input_list)</cite></li>
+<li><cite>llogic.single_type(input_list)</cite></li>
+<li><cite>llogic.symmetric_difference(list_1, list_2)</cite></li>
+<li><cite>llogic.union(list_1, list_2)</cite></li>
+</ul>
+<p>All functions have a <cite>__doc__</cite> attribute with usage instructions.</p>
+<p>This library is published under the MIT License.</p>
+<dl class="function">
+<dt id="listools.llogic.difference">
+<code class="descclassname">listools.llogic.</code><code class="descname">difference</code><span class="sig-paren">(</span><em>list_1</em>, <em>list_2</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.llogic.difference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the difference of two lists (omitting repetitions). The order
+of the elements of the output depends on their order in the lists. The
+order of the inputs lists does affect the result. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="go">[1, 2]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">blist</span><span class="p">,</span> <span class="n">alist</span><span class="p">)</span>
+<span class="go">[7, 6]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="go">[1, 2]</span>
+</pre></div>
+</div>
+<p>Note that llogic.difference does not flatten the lists so nested lists
+are of type list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="go">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="go">[[1, [5, 2]]]</span>
+</pre></div>
+</div>
+<p>The lists can contain any datatype:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="go">[1, 2.3]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.llogic.intersection">
+<code class="descclassname">listools.llogic.</code><code class="descname">intersection</code><span class="sig-paren">(</span><em>list_1</em>, <em>list_2</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.llogic.intersection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the intersection of two lists (omitting repetitions). The order
+of the elements of the output depends on the order they are found in the
+first list. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="go">[3, 4, 5]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="go">[3, 4, 5]</span>
+</pre></div>
+</div>
+<p>Note that llogic.intersection does not flatten the lists so nested lists
+are of type list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="go">[3, 4]</span>
+</pre></div>
+</div>
+<p>The lists can contain any datatype:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="go">[&#39;foo&#39;, (3, 7)]</span>
+</pre></div>
+</div>
+<p>If either list is empty then the result is an empty list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="go">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.llogic.is_contained">
+<code class="descclassname">listools.llogic.</code><code class="descname">is_contained</code><span class="sig-paren">(</span><em>list_1</em>, <em>list_2</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.llogic.is_contained" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if all unique elements of list_1 are also present in list_2
+and returns False when that’s not the case. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">is_contained</span><span class="p">(</span><span class="n">blist</span><span class="p">,</span> <span class="n">alist</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">is_contained</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">is_contained</span><span class="p">(</span><span class="n">blist</span><span class="p">,</span> <span class="n">alist</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Lists are not flattened, so sublists are considered as a single element:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">is_contained</span><span class="p">(</span><span class="n">blist</span><span class="p">,</span> <span class="n">alist</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>The lists can contain any datatype:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="mi">7</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">is_contained</span><span class="p">(</span><span class="n">blist</span><span class="p">,</span> <span class="n">alist</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.llogic.mixed_type">
+<code class="descclassname">listools.llogic.</code><code class="descname">mixed_type</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.llogic.mixed_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns False if all elements of an input_list are of the same type and
+True if they are not. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">single_type</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">single_type</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Note that llogic.mixed_type does not flatten the lists so nested lists are
+of type list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">single_type</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">single_type</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>Also note that empty lists return False:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">single_type</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.llogic.single_type">
+<code class="descclassname">listools.llogic.</code><code class="descname">single_type</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.llogic.single_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if all elements of an input_list are of the same type and
+False if they are not. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">single_type</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">single_type</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>Note that llogic.single_type does not flatten the lists so nested lists are
+of type list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">single_type</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">single_type</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Also note that empty lists return False:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">single_type</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.llogic.symmetric_difference">
+<code class="descclassname">listools.llogic.</code><code class="descname">symmetric_difference</code><span class="sig-paren">(</span><em>list_1</em>, <em>list_2</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.llogic.symmetric_difference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the symmetric difference of two lists (omitting repetitions). The
+order of the elements of the output depends on their order in the lists.
+The order of the inputs lists does affect the result. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">symmetric_difference</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="go">[1, 2, 7, 6]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">symmetric_difference</span><span class="p">(</span><span class="n">blist</span><span class="p">,</span> <span class="n">alist</span><span class="p">)</span>
+<span class="go">[7, 6, 1, 2]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">symmetric_difference</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="go">[1, 2, 6]</span>
+</pre></div>
+</div>
+<p>Note that llogic.symmetric_difference does not flatten the lists so nested
+lists are of type list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">symmetric_difference</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="go">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">symmetric_difference</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="go">[[1, [5, 2]], 1, 2, 5]</span>
+</pre></div>
+</div>
+<p>The lists can contain any datatype:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">symmetric_difference</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="go">[1, 2.3, 7+3j]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="listools.llogic.union">
+<code class="descclassname">listools.llogic.</code><code class="descname">union</code><span class="sig-paren">(</span><em>list_1</em>, <em>list_2</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.llogic.union" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the union of two lists (omitting repetitions). The order of the
+elements of the output depends on the order they are found in the first and
+then in the second lists. Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="go">[1, 2, 3, 4, 5, 7, 6]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="go">[1, 2, 3, 4, 5, 7, 6]</span>
+</pre></div>
+</div>
+<p>Note that llogic.union does not flatten the lists so nested lists
+are of type list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="go">[3, 4, [1, [5, 2]], 1, 2, 5]</span>
+</pre></div>
+</div>
+<p>The lists can contain any datatype:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llogic</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
+<span class="go">[1, 2.3, &#39;foo&#39;, (3, 7), 7+3j]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">listools</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Gilberto Agostinho.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
