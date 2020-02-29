@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to listools’s documentation! &mdash; listools 2.2.0 documentation</title>
+  <title>Welcome to listools’s documentation! &mdash; listools 2.2.1 documentation</title>
   
 
   
@@ -191,7 +191,7 @@ newer. You can install it using <cite>pip install listools</cite>.</p>
 <li><cite>listutils.list_mask_cycle(input_list, mask)</cite></li>
 <li><cite>listutils.list_gcd(input_list)</cite></li>
 <li><cite>listutils.period_len(input_list[, ignore_partial_cycles])</cite></li>
-<li><cite>listutils.scrambled(input_list)</cite></li>
+<li><cite>listutils.shuffle(input_list)</cite></li>
 <li><cite>llogic.difference(list_1, list_2)</cite></li>
 <li><cite>llogic.intersection(list_1, list_2)</cite></li>
 <li><cite>llogic.is_ascending(input_list[, step])</cite></li>
@@ -256,8 +256,8 @@ an infinitely large depth. Usage:</p>
 <dl class="function">
 <dt id="listools.flatools.flatten_index">
 <code class="descclassname">listools.flatools.</code><code class="descname">flatten_index</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_index" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the length of a flatten list (that is, it counts all elements in
-all of its subslists). Usage:</p>
+<dd><p>Returns the index of the first instance of an element in a flatten list.
+Usage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_index</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">alist</span><span class="p">)</span>
 <span class="go">2</span>
@@ -315,8 +315,8 @@ containing any number of nested subslists. Usage:</p>
 <dl class="function">
 <dt id="listools.flatools.flatten_len">
 <code class="descclassname">listools.flatools.</code><code class="descname">flatten_len</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_len" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the flatten_length of a flatten list (that is, it counts all
-elements in all of its subslists). Usage:</p>
+<dd><p>Returns the length of a flatten list (that is, it counts all elements in
+all of its subslists). Usage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_len</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
 <span class="go">6</span>
@@ -613,8 +613,8 @@ starting value of the sum.</p>
 <dl class="function">
 <dt id="listools.flatools.flatten_zip_cycle">
 <code class="descclassname">listools.flatools.</code><code class="descname">flatten_zip_cycle</code><span class="sig-paren">(</span><em>*input_lists</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_zip_cycle" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function is very nearly identical to flatools.flatten_zip_cycle except
-that it also flattens all lists before zipping and cycling them. Usage:</p>
+<dd><p>This function is nearly identical to iterz.zip_cycle except that it also
+flattens all lists before zipping and cycling them. Usage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="mi">8</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">flatools</span><span class="o">.</span><span class="n">flatten_zip_cycle</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">):</span>
@@ -744,7 +744,7 @@ The full list of available functions is:</p>
 <dd><p>This will cycle an iterator indefinitely. Usage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">inf_cycle_iter</span> <span class="o">=</span> <span class="n">iterz</span><span class="o">.</span><span class="n">inf_cycle</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">inf_cycle_iter</span><span class="o">.</span><span class="fm">__next__</span><span class="p">())</span>
 <span class="go">1</span>
 <span class="go">2</span>
@@ -779,7 +779,7 @@ values according to the mastk. The mask should be a list containing 1’s and
 0’s, or alternatively True’s and False’s. Usage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mask</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">listutils</span><span class="o">.</span><span class="n">iter_mask</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">mask</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterz</span><span class="o">.</span><span class="n">iter_mask</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">mask</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <span class="go">1</span>
 <span class="go">3</span>
@@ -787,7 +787,7 @@ values according to the mastk. The mask should be a list containing 1’s and
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mask</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">listutils</span><span class="o">.</span><span class="n">iter_mask</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">mask</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterz</span><span class="o">.</span><span class="n">iter_mask</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">mask</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <span class="go">1</span>
 <span class="go">4</span>
@@ -796,7 +796,7 @@ values according to the mastk. The mask should be a list containing 1’s and
 <p>If the mask is shorter than the input iterator, it loops:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mask</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">listutils</span><span class="o">.</span><span class="n">iter_mask</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">mask</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterz</span><span class="o">.</span><span class="n">iter_mask</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">mask</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <span class="go">1</span>
 <span class="go">3</span>
@@ -808,7 +808,7 @@ values according to the mastk. The mask should be a list containing 1’s and
 <p>The input iterator can contain any datatypes:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mask</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">listutils</span><span class="o">.</span><span class="n">iter_mask</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">mask</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterz</span><span class="o">.</span><span class="n">iter_mask</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">mask</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <span class="go">1</span>
 <span class="go">True</span>
@@ -907,7 +907,7 @@ is output. Usage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">blist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">zip_inf_cycle_iter</span> <span class="o">=</span> <span class="n">iterz</span><span class="o">.</span><span class="n">zip_inf_cycle</span><span class="p">(</span><span class="n">alist</span><span class="p">,</span> <span class="n">blist</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">zip_inf_cycle_iter</span><span class="o">.</span><span class="fm">__next__</span><span class="p">())</span>
 <span class="go">1 4</span>
 <span class="go">2 5</span>
@@ -1090,7 +1090,7 @@ operations to lists. The full list of available functions is:</p>
 <li><cite>listutils.list_mask_cycle(input_list, mask)</cite></li>
 <li><cite>listutils.list_gcd(input_list)</cite></li>
 <li><cite>listutils.period_len(input_list[, ignore_partial_cycles])</cite></li>
-<li><cite>listutils.scrambled(input_list)</cite></li>
+<li><cite>listutils.shuffle(input_list)</cite></li>
 </ul>
 <p>All functions have a <cite>__doc__</cite> attribute with usage instructions.</p>
 <p>This library is published under the MIT License.</p>
@@ -1241,19 +1241,19 @@ argument does not affect the result:</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="listools.listutils.scrambled">
-<code class="descclassname">listools.listutils.</code><code class="descname">scrambled</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.listutils.scrambled" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function returns a scrambled list with the same elements as the input
+<dt id="listools.listutils.shuffle">
+<code class="descclassname">listools.listutils.</code><code class="descname">shuffle</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.listutils.shuffle" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function returns a shuffled list with the same elements as the input
 list. Usage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">listutils</span><span class="o">.</span><span class="n">scrambled</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">listutils</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
 <span class="go">[2, 1, 4, 0, 3]</span>
 </pre></div>
 </div>
-<p>It differs from random.shuffle() since listutils.scrambled() outputs a new
+<p>It differs from random.shuffle() since listutils.shuffle() outputs a new
 list, preserving the input one:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">listutils</span><span class="o">.</span><span class="n">scrambled</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">listutils</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
 <span class="go">[2, 1, 4, 0, 3]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span>
 <span class="go">[0, 1, 2, 3, 4]</span>
