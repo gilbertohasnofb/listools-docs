@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to listools’s documentation! &mdash; listools 2.2.1 documentation</title>
+  <title>Welcome to listools’s documentation! &mdash; listools 2.3.1 documentation</title>
   
 
   
@@ -56,7 +56,7 @@
             
             
               <div class="version">
-                2.2
+                2.3
               </div>
             
           
@@ -83,11 +83,55 @@
               <!-- Local TOC -->
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">Welcome to listools’s documentation!</a></li>
-<li><a class="reference internal" href="#module-listools">The <cite>listools</cite> package</a></li>
-<li><a class="reference internal" href="#module-listools.flatools"><cite>flatools</cite> module</a></li>
-<li><a class="reference internal" href="#module-listools.iterz"><cite>iterz</cite> module</a></li>
-<li><a class="reference internal" href="#module-listools.listutils"><cite>listutils</cite> module</a></li>
-<li><a class="reference internal" href="#module-listools.llogic"><cite>llogic</cite> module</a></li>
+<li><a class="reference internal" href="#module-listools">The listools package</a></li>
+<li><a class="reference internal" href="#module-listools.flatools">flatools module</a><ul>
+<li><a class="reference internal" href="#flatten">flatten</a></li>
+<li><a class="reference internal" href="#flatten-index">flatten_index</a></li>
+<li><a class="reference internal" href="#flatten-join">flatten_join</a></li>
+<li><a class="reference internal" href="#flatten-len">flatten_len</a></li>
+<li><a class="reference internal" href="#flatten-max">flatten_max</a></li>
+<li><a class="reference internal" href="#flatten-min">flatten_min</a></li>
+<li><a class="reference internal" href="#flatten-mixed-type">flatten_mixed_type</a></li>
+<li><a class="reference internal" href="#flatten-reverse">flatten_reverse</a></li>
+<li><a class="reference internal" href="#flatten-single-type">flatten_single_type</a></li>
+<li><a class="reference internal" href="#flatten-sorted">flatten_sorted</a></li>
+<li><a class="reference internal" href="#flatten-sum">flatten_sum</a></li>
+<li><a class="reference internal" href="#flatten-zip-cycle">flatten_zip_cycle</a></li>
+<li><a class="reference internal" href="#pflatten">pflatten</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-listools.iterz">iterz module</a><ul>
+<li><a class="reference internal" href="#cycle-until-index">cycle_until_index</a></li>
+<li><a class="reference internal" href="#inf-cycle">inf_cycle</a></li>
+<li><a class="reference internal" href="#iter-mask">iter_mask</a></li>
+<li><a class="reference internal" href="#ncycle">ncycle</a></li>
+<li><a class="reference internal" href="#zip-cycle">zip_cycle</a></li>
+<li><a class="reference internal" href="#zip-inf-cycle">zip_inf_cycle</a></li>
+<li><a class="reference internal" href="#zip-longest">zip_longest</a></li>
+<li><a class="reference internal" href="#zip-syzygy">zip_syzygy</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-listools.listutils">listutils module</a><ul>
+<li><a class="reference internal" href="#list-gcd">list_gcd</a></li>
+<li><a class="reference internal" href="#list-lcm">list_lcm</a></li>
+<li><a class="reference internal" href="#list-mask">list_mask</a></li>
+<li><a class="reference internal" href="#list-mask-cycle">list_mask_cycle</a></li>
+<li><a class="reference internal" href="#period-len">period_len</a></li>
+<li><a class="reference internal" href="#shuffle">shuffle</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-listools.llogic">llogic module</a><ul>
+<li><a class="reference internal" href="#difference">difference</a></li>
+<li><a class="reference internal" href="#intersection">intersection</a></li>
+<li><a class="reference internal" href="#is-ascending">is_ascending</a></li>
+<li><a class="reference internal" href="#is-contained">is_contained</a></li>
+<li><a class="reference internal" href="#is-descending">is_descending</a></li>
+<li><a class="reference internal" href="#mixed-type">mixed_type</a></li>
+<li><a class="reference internal" href="#single-type">single_type</a></li>
+<li><a class="reference internal" href="#symmetric-difference">symmetric_difference</a></li>
+<li><a class="reference internal" href="#union">union</a></li>
+</ul>
+</li>
 </ul>
 </div>
             
@@ -158,77 +202,26 @@
 </div>
 </div>
 <div class="section" id="module-listools">
-<span id="the-listools-package"></span><h1>The <cite>listools</cite> package<a class="headerlink" href="#module-listools" title="Permalink to this headline">¶</a></h1>
+<span id="the-listools-package"></span><h1>The listools package<a class="headerlink" href="#module-listools" title="Permalink to this headline">¶</a></h1>
 <p><cite>listools</cite> is a Python 3 package of which provides utility functions for
 dealing with lists in Python 3. <cite>listools</cite> supports Python version 3.5 and
 newer. You can install it using <cite>pip install listools</cite>.</p>
 <p>This package contains four modules: <cite>flatools</cite>, <cite>iterz</cite>, <cite>listutils</cite> and
-<cite>llogic</cite>. The complete list of functions available is:</p>
-<ul class="simple">
-<li><cite>flatools.flatten_index(element, input_list)</cite></li>
-<li><cite>flatools.flatten_join(*input_lists)</cite></li>
-<li><cite>flatools.flatten_len(input_list)</cite></li>
-<li><cite>flatools.flatten_max(input_list, *[, key, default])</cite></li>
-<li><cite>flatools.flatten_min(input_list, *[, key, default])</cite></li>
-<li><cite>flatools.flatten_mixed_type(input_list)</cite></li>
-<li><cite>flatools.flatten_reverse(input_list)</cite></li>
-<li><cite>flatools.flatten_single_type(input_list)</cite></li>
-<li><cite>flatools.flatten_sorted(input_list, *[, key, reverse])</cite></li>
-<li><cite>flatools.flatten_sum(input_list[, start])</cite></li>
-<li><cite>flatools.flatten_zip_cycle(*input_lists)</cite></li>
-<li><cite>flatools.flatten(input_list)</cite></li>
-<li><cite>flatools.pflatten(input_list[, depth])</cite></li>
-<li><cite>iterz.cycle_until_index(input_iter, i)</cite></li>
-<li><cite>iterz.inf_cycle(input_iter)</cite></li>
-<li><cite>iterz.iter_mask(input_iter, mask)</cite></li>
-<li><cite>iterz.ncycles(input_iter, n)</cite></li>
-<li><cite>iterz.zip_cycle(*input_iters)</cite></li>
-<li><cite>iterz.zip_inf_cycle(*input_iters)</cite></li>
-<li><cite>iterz.zip_longest(*input_iters[, default])</cite></li>
-<li><cite>iterz.zip_syzygy(*input_iters)</cite></li>
-<li><cite>listutils.list_lcm(input_list)</cite></li>
-<li><cite>listutils.list_mask(input_list, mask)</cite></li>
-<li><cite>listutils.list_mask_cycle(input_list, mask)</cite></li>
-<li><cite>listutils.list_gcd(input_list)</cite></li>
-<li><cite>listutils.period_len(input_list[, ignore_partial_cycles])</cite></li>
-<li><cite>listutils.shuffle(input_list)</cite></li>
-<li><cite>llogic.difference(list_1, list_2)</cite></li>
-<li><cite>llogic.intersection(list_1, list_2)</cite></li>
-<li><cite>llogic.is_ascending(input_list[, step])</cite></li>
-<li><cite>llogic.is_contained(list_1, list_2)</cite></li>
-<li><cite>llogic.is_descending(input_list[, step])</cite></li>
-<li><cite>llogic.mixed_type(input_list)</cite></li>
-<li><cite>llogic.single_type(input_list)</cite></li>
-<li><cite>llogic.symmetric_difference(list_1, list_2)</cite></li>
-<li><cite>llogic.union(list_1, list_2)</cite></li>
-</ul>
-<p>All functions have a <cite>__doc__</cite> attribute with usage instructions.</p>
+<cite>llogic</cite>. All functions have a <cite>__doc__</cite> attribute with usage instructions.</p>
 <p>Documentation is available at <a class="reference external" href="https://gilbertohasnofb.github.io/listools-docs/">https://gilbertohasnofb.github.io/listools-docs/</a>.</p>
 <p>A pdf version of the documentation is also available in the <cite>docs</cite> directory.</p>
 <p>Bugs can be reported to <a class="reference external" href="https://github.com/gilbertohasnofb/listools/issues">https://github.com/gilbertohasnofb/listools/issues</a>.</p>
 <p>This library is published under the MIT License.</p>
 </div>
 <div class="section" id="module-listools.flatools">
-<span id="flatools-module"></span><h1><cite>flatools</cite> module<a class="headerlink" href="#module-listools.flatools" title="Permalink to this headline">¶</a></h1>
-<p>The module <cite>flatools</cite> contains functions that deal with flatten lists. The
-full list of available functions is:</p>
-<ul class="simple">
-<li><cite>flatools.flatten_index(element, input_list)</cite></li>
-<li><cite>flatools.flatten_join(*input_lists)</cite></li>
-<li><cite>flatools.flatten_len(input_list)</cite></li>
-<li><cite>flatools.flatten_max(input_list, *[, key, default])</cite></li>
-<li><cite>flatools.flatten_min(input_list, *[, key, default])</cite></li>
-<li><cite>flatools.flatten_mixed_type(input_list)</cite></li>
-<li><cite>flatools.flatten_reverse(input_list)</cite></li>
-<li><cite>flatools.flatten_single_type(input_list)</cite></li>
-<li><cite>flatools.flatten_sorted(input_list, *[, key, reverse])</cite></li>
-<li><cite>flatools.flatten_sum(input_list[, start])</cite></li>
-<li><cite>flatools.flatten_zip_cycle(*input_lists)</cite></li>
-<li><cite>flatools.flatten(input_list)</cite></li>
-<li><cite>flatools.pflatten(input_list[, depth])</cite></li>
-</ul>
-<p>All functions have a <cite>__doc__</cite> attribute with usage instructions.</p>
+<span id="flatools-module"></span><h1>flatools module<a class="headerlink" href="#module-listools.flatools" title="Permalink to this headline">¶</a></h1>
+<p>The module <cite>flatools</cite> contains functions that deal with flatten lists. All
+functions have a <cite>__doc__</cite> attribute with usage instructions.</p>
+<p>Recommended import procedure is:</p>
+<p>from listools import flatools</p>
 <p>This library is published under the MIT License.</p>
+<div class="section" id="flatten">
+<h2>flatten<a class="headerlink" href="#flatten" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.flatools.flatten">
 <code class="descclassname">listools.flatools.</code><code class="descname">flatten</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten" title="Permalink to this definition">¶</a></dt>
@@ -253,6 +246,9 @@ an infinitely large depth. Usage:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="flatten-index">
+<h2>flatten_index<a class="headerlink" href="#flatten-index" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.flatools.flatten_index">
 <code class="descclassname">listools.flatools.</code><code class="descname">flatten_index</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_index" title="Permalink to this definition">¶</a></dt>
@@ -278,6 +274,9 @@ flatten_index raises a ValueError if an element is not found in a list:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="flatten-join">
+<h2>flatten_join<a class="headerlink" href="#flatten-join" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.flatools.flatten_join">
 <code class="descclassname">listools.flatools.</code><code class="descname">flatten_join</code><span class="sig-paren">(</span><em>*input_lists</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_join" title="Permalink to this definition">¶</a></dt>
@@ -312,6 +311,9 @@ containing any number of nested subslists. Usage:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="flatten-len">
+<h2>flatten_len<a class="headerlink" href="#flatten-len" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.flatools.flatten_len">
 <code class="descclassname">listools.flatools.</code><code class="descname">flatten_len</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_len" title="Permalink to this definition">¶</a></dt>
@@ -330,10 +332,13 @@ all of its subslists). Usage:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="flatten-max">
+<h2>flatten_max<a class="headerlink" href="#flatten-max" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.flatools.flatten_max">
 <code class="descclassname">listools.flatools.</code><code class="descname">flatten_max</code><span class="sig-paren">(</span><em>input_list</em>, <em>*</em><span class="optional">[</span>, <em>key</em>, <em>default</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_max" title="Permalink to this definition">¶</a></dt>
-<dd><p>Finds the largest element of a  flattened list containing any number of
+<dd><p>Finds the largest element of a flattened list containing any number of
 nested subslists. Usage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_max</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
@@ -378,6 +383,9 @@ when the input is an empty list:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="flatten-min">
+<h2>flatten_min<a class="headerlink" href="#flatten-min" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.flatools.flatten_min">
 <code class="descclassname">listools.flatools.</code><code class="descname">flatten_min</code><span class="sig-paren">(</span><em>input_list</em>, <em>*</em><span class="optional">[</span>, <em>key</em>, <em>default</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_min" title="Permalink to this definition">¶</a></dt>
@@ -426,6 +434,9 @@ when the input is an empty list:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="flatten-mixed-type">
+<h2>flatten_mixed_type<a class="headerlink" href="#flatten-mixed-type" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.flatools.flatten_mixed_type">
 <code class="descclassname">listools.flatools.</code><code class="descname">flatten_mixed_type</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_mixed_type" title="Permalink to this definition">¶</a></dt>
@@ -464,6 +475,9 @@ type and True if they are not. Usage:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="flatten-reverse">
+<h2>flatten_reverse<a class="headerlink" href="#flatten-reverse" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.flatools.flatten_reverse">
 <code class="descclassname">listools.flatools.</code><code class="descname">flatten_reverse</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_reverse" title="Permalink to this definition">¶</a></dt>
@@ -493,6 +507,9 @@ flatten_reversely sorted one dimensional list. Usage:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="flatten-single-type">
+<h2>flatten_single_type<a class="headerlink" href="#flatten-single-type" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.flatools.flatten_single_type">
 <code class="descclassname">listools.flatools.</code><code class="descname">flatten_single_type</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_single_type" title="Permalink to this definition">¶</a></dt>
@@ -531,6 +548,9 @@ type and False if they are not. Usage:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="flatten-sorted">
+<h2>flatten_sorted<a class="headerlink" href="#flatten-sorted" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.flatools.flatten_sorted">
 <code class="descclassname">listools.flatools.</code><code class="descname">flatten_sorted</code><span class="sig-paren">(</span><em>input_list</em>, <em>*</em><span class="optional">[</span>, <em>key</em>, <em>reverse</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_sorted" title="Permalink to this definition">¶</a></dt>
@@ -575,6 +595,9 @@ flatten_sorted one dimensional list. Usage:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="flatten-sum">
+<h2>flatten_sum<a class="headerlink" href="#flatten-sum" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.flatools.flatten_sum">
 <code class="descclassname">listools.flatools.</code><code class="descname">flatten_sum</code><span class="sig-paren">(</span><em>input_list</em><span class="optional">[</span>, <em>start</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_sum" title="Permalink to this definition">¶</a></dt>
@@ -610,6 +633,9 @@ starting value of the sum.</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="flatten-zip-cycle">
+<h2>flatten_zip_cycle<a class="headerlink" href="#flatten-zip-cycle" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.flatools.flatten_zip_cycle">
 <code class="descclassname">listools.flatools.</code><code class="descname">flatten_zip_cycle</code><span class="sig-paren">(</span><em>*input_lists</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_zip_cycle" title="Permalink to this definition">¶</a></dt>
@@ -656,6 +682,9 @@ flattens all lists before zipping and cycling them. Usage:</p>
 lists as input due to its flatenning function.</p>
 </dd></dl>
 
+</div>
+<div class="section" id="pflatten">
+<h2>pflatten<a class="headerlink" href="#pflatten" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.flatools.pflatten">
 <code class="descclassname">listools.flatools.</code><code class="descname">pflatten</code><span class="sig-paren">(</span><em>input_list</em><span class="optional">[</span>, <em>depth</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.pflatten" title="Permalink to this definition">¶</a></dt>
@@ -696,22 +725,16 @@ flatten nested sublists:</p>
 </dd></dl>
 
 </div>
+</div>
 <div class="section" id="module-listools.iterz">
-<span id="iterz-module"></span><h1><cite>iterz</cite> module<a class="headerlink" href="#module-listools.iterz" title="Permalink to this headline">¶</a></h1>
+<span id="iterz-module"></span><h1>iterz module<a class="headerlink" href="#module-listools.iterz" title="Permalink to this headline">¶</a></h1>
 <p>The module <cite>iterz</cite> contains functions that manipualte lists as iterators.
-The full list of available functions is:</p>
-<ul class="simple">
-<li><cite>iterz.cycle_until_index(input_iter, i)</cite></li>
-<li><cite>iterz.inf_cycle(input_iter)</cite></li>
-<li><cite>iterz.iter_mask(input_iter, mask)</cite></li>
-<li><cite>iterz.ncycles(input_iter, n)</cite></li>
-<li><cite>iterz.zip_cycle(*input_iters)</cite></li>
-<li><cite>iterz.zip_inf_cycle(*input_iters)</cite></li>
-<li><cite>iterz.zip_longest(*input_iters[, default])</cite></li>
-<li><cite>iterz.zip_syzygy(*input_iters)</cite></li>
-</ul>
-<p>All functions have a <cite>__doc__</cite> attribute with usage instructions.</p>
+All functions have a <cite>__doc__</cite> attribute with usage instructions.</p>
+<p>Recommended import procedure is:</p>
+<p>from listools import iterz</p>
 <p>This library is published under the MIT License.</p>
+<div class="section" id="cycle-until-index">
+<h2>cycle_until_index<a class="headerlink" href="#cycle-until-index" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.iterz.cycle_until_index">
 <code class="descclassname">listools.iterz.</code><code class="descname">cycle_until_index</code><span class="sig-paren">(</span><em>input_iter</em>, <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.iterz.cycle_until_index" title="Permalink to this definition">¶</a></dt>
@@ -738,6 +761,9 @@ The full list of available functions is:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="inf-cycle">
+<h2>inf_cycle<a class="headerlink" href="#inf-cycle" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.iterz.inf_cycle">
 <code class="descclassname">listools.iterz.</code><code class="descname">inf_cycle</code><span class="sig-paren">(</span><em>input_iter</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.iterz.inf_cycle" title="Permalink to this definition">¶</a></dt>
@@ -771,6 +797,9 @@ The full list of available functions is:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="iter-mask">
+<h2>iter_mask<a class="headerlink" href="#iter-mask" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.iterz.iter_mask">
 <code class="descclassname">listools.iterz.</code><code class="descname">iter_mask</code><span class="sig-paren">(</span><em>input_iter</em>, <em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.iterz.iter_mask" title="Permalink to this definition">¶</a></dt>
@@ -819,6 +848,9 @@ values according to the mastk. The mask should be a list containing 1’s and
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="ncycle">
+<h2>ncycle<a class="headerlink" href="#ncycle" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.iterz.ncycle">
 <code class="descclassname">listools.iterz.</code><code class="descname">ncycle</code><span class="sig-paren">(</span><em>input_iter</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.iterz.ncycle" title="Permalink to this definition">¶</a></dt>
@@ -853,6 +885,9 @@ values according to the mastk. The mask should be a list containing 1’s and
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="zip-cycle">
+<h2>zip_cycle<a class="headerlink" href="#zip-cycle" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.iterz.zip_cycle">
 <code class="descclassname">listools.iterz.</code><code class="descname">zip_cycle</code><span class="sig-paren">(</span><em>*input_iters</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.iterz.zip_cycle" title="Permalink to this definition">¶</a></dt>
@@ -900,6 +935,9 @@ is output. Usage:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="zip-inf-cycle">
+<h2>zip_inf_cycle<a class="headerlink" href="#zip-inf-cycle" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.iterz.zip_inf_cycle">
 <code class="descclassname">listools.iterz.</code><code class="descname">zip_inf_cycle</code><span class="sig-paren">(</span><em>*input_iters</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.iterz.zip_inf_cycle" title="Permalink to this definition">¶</a></dt>
@@ -958,6 +996,9 @@ is output. Usage:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="zip-longest">
+<h2>zip_longest<a class="headerlink" href="#zip-longest" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.iterz.zip_longest">
 <code class="descclassname">listools.iterz.</code><code class="descname">zip_longest</code><span class="sig-paren">(</span><em>*input_iters</em><span class="optional">[</span>, <em>default</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#listools.iterz.zip_longest" title="Permalink to this definition">¶</a></dt>
@@ -1020,6 +1061,9 @@ Usage:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="zip-syzygy">
+<h2>zip_syzygy<a class="headerlink" href="#zip-syzygy" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.iterz.zip_syzygy">
 <code class="descclassname">listools.iterz.</code><code class="descname">zip_syzygy</code><span class="sig-paren">(</span><em>*input_iters</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.iterz.zip_syzygy" title="Permalink to this definition">¶</a></dt>
@@ -1080,20 +1124,17 @@ first yielded one). Usage:</p>
 </dd></dl>
 
 </div>
+</div>
 <div class="section" id="module-listools.listutils">
-<span id="listutils-module"></span><h1><cite>listutils</cite> module<a class="headerlink" href="#module-listools.listutils" title="Permalink to this headline">¶</a></h1>
+<span id="listutils-module"></span><h1>listutils module<a class="headerlink" href="#module-listools.listutils" title="Permalink to this headline">¶</a></h1>
 <p>The module <cite>listutils</cite> contains functions that apply simple mathematical
-operations to lists. The full list of available functions is:</p>
-<ul class="simple">
-<li><cite>listutils.list_lcm(input_list)</cite></li>
-<li><cite>listutils.list_mask(input_list, mask)</cite></li>
-<li><cite>listutils.list_mask_cycle(input_list, mask)</cite></li>
-<li><cite>listutils.list_gcd(input_list)</cite></li>
-<li><cite>listutils.period_len(input_list[, ignore_partial_cycles])</cite></li>
-<li><cite>listutils.shuffle(input_list)</cite></li>
-</ul>
-<p>All functions have a <cite>__doc__</cite> attribute with usage instructions.</p>
+operations to lists. All functions have a <cite>__doc__</cite> attribute with usage
+instructions.</p>
+<p>Recommended import procedure is:</p>
+<p>from listools import listutils</p>
 <p>This library is published under the MIT License.</p>
+<div class="section" id="list-gcd">
+<h2>list_gcd<a class="headerlink" href="#list-gcd" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.listutils.list_gcd">
 <code class="descclassname">listools.listutils.</code><code class="descname">list_gcd</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.listutils.list_gcd" title="Permalink to this definition">¶</a></dt>
@@ -1111,6 +1152,9 @@ Usage:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="list-lcm">
+<h2>list_lcm<a class="headerlink" href="#list-lcm" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.listutils.list_lcm">
 <code class="descclassname">listools.listutils.</code><code class="descname">list_lcm</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.listutils.list_lcm" title="Permalink to this definition">¶</a></dt>
@@ -1128,6 +1172,9 @@ Usage:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="list-mask">
+<h2>list_mask<a class="headerlink" href="#list-mask" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.listutils.list_mask">
 <code class="descclassname">listools.listutils.</code><code class="descname">list_mask</code><span class="sig-paren">(</span><em>input_list</em>, <em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.listutils.list_mask" title="Permalink to this definition">¶</a></dt>
@@ -1167,6 +1214,9 @@ considered only up to the mask length:</p>
 other hand, the mask argument cannot be an empty list.</p>
 </dd></dl>
 
+</div>
+<div class="section" id="list-mask-cycle">
+<h2>list_mask_cycle<a class="headerlink" href="#list-mask-cycle" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.listutils.list_mask_cycle">
 <code class="descclassname">listools.listutils.</code><code class="descname">list_mask_cycle</code><span class="sig-paren">(</span><em>input_list</em>, <em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.listutils.list_mask_cycle" title="Permalink to this definition">¶</a></dt>
@@ -1204,6 +1254,9 @@ the mask is cycled. Usage:</p>
 other hand, the mask argument cannot be an empty list.</p>
 </dd></dl>
 
+</div>
+<div class="section" id="period-len">
+<h2>period_len<a class="headerlink" href="#period-len" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.listutils.period_len">
 <code class="descclassname">listools.listutils.</code><code class="descname">period_len</code><span class="sig-paren">(</span><em>input_list</em><span class="optional">[</span>, <em>ignore_partial_cycles</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#listools.listutils.period_len" title="Permalink to this definition">¶</a></dt>
@@ -1240,6 +1293,9 @@ argument does not affect the result:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="shuffle">
+<h2>shuffle<a class="headerlink" href="#shuffle" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.listutils.shuffle">
 <code class="descclassname">listools.listutils.</code><code class="descname">shuffle</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.listutils.shuffle" title="Permalink to this definition">¶</a></dt>
@@ -1266,23 +1322,16 @@ list, preserving the input one:</p>
 </dd></dl>
 
 </div>
+</div>
 <div class="section" id="module-listools.llogic">
-<span id="llogic-module"></span><h1><cite>llogic</cite> module<a class="headerlink" href="#module-listools.llogic" title="Permalink to this headline">¶</a></h1>
+<span id="llogic-module"></span><h1>llogic module<a class="headerlink" href="#module-listools.llogic" title="Permalink to this headline">¶</a></h1>
 <p>The module <cite>llogic</cite> contains functions that deal with logic operations on
-lists. The full list of available functions is:</p>
-<ul class="simple">
-<li><cite>llogic.difference(list_1, list_2)</cite></li>
-<li><cite>llogic.intersection(list_1, list_2)</cite></li>
-<li><cite>llogic.is_ascending(input_list[, step])</cite></li>
-<li><cite>llogic.is_contained(list_1, list_2)</cite></li>
-<li><cite>llogic.is_descending(input_list[, step])</cite></li>
-<li><cite>llogic.mixed_type(input_list)</cite></li>
-<li><cite>llogic.single_type(input_list)</cite></li>
-<li><cite>llogic.symmetric_difference(list_1, list_2)</cite></li>
-<li><cite>llogic.union(list_1, list_2)</cite></li>
-</ul>
-<p>All functions have a <cite>__doc__</cite> attribute with usage instructions.</p>
+lists. All functions have a <cite>__doc__</cite> attribute with usage instructions.</p>
+<p>Recommended import procedure is:</p>
+<p>from listools import llogic</p>
 <p>This library is published under the MIT License.</p>
+<div class="section" id="difference">
+<h2>difference<a class="headerlink" href="#difference" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.llogic.difference">
 <code class="descclassname">listools.llogic.</code><code class="descname">difference</code><span class="sig-paren">(</span><em>list_1</em>, <em>list_2</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.llogic.difference" title="Permalink to this definition">¶</a></dt>
@@ -1324,6 +1373,9 @@ are of type list:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="intersection">
+<h2>intersection<a class="headerlink" href="#intersection" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.llogic.intersection">
 <code class="descclassname">listools.llogic.</code><code class="descname">intersection</code><span class="sig-paren">(</span><em>list_1</em>, <em>list_2</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.llogic.intersection" title="Permalink to this definition">¶</a></dt>
@@ -1366,6 +1418,9 @@ are of type list:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="is-ascending">
+<h2>is_ascending<a class="headerlink" href="#is-ascending" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.llogic.is_ascending">
 <code class="descclassname">listools.llogic.</code><code class="descname">is_ascending</code><span class="sig-paren">(</span><em>input_list</em><span class="optional">[</span>, <em>step</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#listools.llogic.is_ascending" title="Permalink to this definition">¶</a></dt>
@@ -1410,6 +1465,9 @@ considered as ascending:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="is-contained">
+<h2>is_contained<a class="headerlink" href="#is-contained" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.llogic.is_contained">
 <code class="descclassname">listools.llogic.</code><code class="descname">is_contained</code><span class="sig-paren">(</span><em>list_1</em>, <em>list_2</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.llogic.is_contained" title="Permalink to this definition">¶</a></dt>
@@ -1445,6 +1503,9 @@ and returns False when that’s not the case. Usage:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="is-descending">
+<h2>is_descending<a class="headerlink" href="#is-descending" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.llogic.is_descending">
 <code class="descclassname">listools.llogic.</code><code class="descname">is_descending</code><span class="sig-paren">(</span><em>input_list</em><span class="optional">[</span>, <em>step</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#listools.llogic.is_descending" title="Permalink to this definition">¶</a></dt>
@@ -1489,6 +1550,9 @@ considered as ascending:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="mixed-type">
+<h2>mixed_type<a class="headerlink" href="#mixed-type" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.llogic.mixed_type">
 <code class="descclassname">listools.llogic.</code><code class="descname">mixed_type</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.llogic.mixed_type" title="Permalink to this definition">¶</a></dt>
@@ -1524,6 +1588,9 @@ of type list:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="single-type">
+<h2>single_type<a class="headerlink" href="#single-type" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.llogic.single_type">
 <code class="descclassname">listools.llogic.</code><code class="descname">single_type</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.llogic.single_type" title="Permalink to this definition">¶</a></dt>
@@ -1559,6 +1626,9 @@ of type list:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="symmetric-difference">
+<h2>symmetric_difference<a class="headerlink" href="#symmetric-difference" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.llogic.symmetric_difference">
 <code class="descclassname">listools.llogic.</code><code class="descname">symmetric_difference</code><span class="sig-paren">(</span><em>list_1</em>, <em>list_2</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.llogic.symmetric_difference" title="Permalink to this definition">¶</a></dt>
@@ -1600,6 +1670,9 @@ lists are of type list:</p>
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="union">
+<h2>union<a class="headerlink" href="#union" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="listools.llogic.union">
 <code class="descclassname">listools.llogic.</code><code class="descname">union</code><span class="sig-paren">(</span><em>list_1</em>, <em>list_2</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.llogic.union" title="Permalink to this definition">¶</a></dt>
@@ -1635,6 +1708,7 @@ are of type list:</p>
 </div>
 </dd></dl>
 
+</div>
 </div>
 
 
