@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to listools’s documentation! &mdash; listools 2.3.1 documentation</title>
+  <title>Welcome to listools’s documentation! &mdash; listools 2.3.2 documentation</title>
   
 
   
@@ -482,7 +482,7 @@ type and True if they are not. Usage:</p>
 <dt id="listools.flatools.flatten_reverse">
 <code class="descclassname">listools.flatools.</code><code class="descname">flatten_reverse</code><span class="sig-paren">(</span><em>input_list</em><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_reverse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Completely flattens a list containing any number of nested subslists into a
-flatten_reversely sorted one dimensional list. Usage:</p>
+reversed one dimensional list. Usage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_reverse</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
 <span class="go">[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</span>
@@ -555,7 +555,7 @@ type and False if they are not. Usage:</p>
 <dt id="listools.flatools.flatten_sorted">
 <code class="descclassname">listools.flatools.</code><code class="descname">flatten_sorted</code><span class="sig-paren">(</span><em>input_list</em>, <em>*</em><span class="optional">[</span>, <em>key</em>, <em>reverse</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#listools.flatools.flatten_sorted" title="Permalink to this definition">¶</a></dt>
 <dd><p>Completely flattens a list containing any number of nested subslists into a
-flatten_sorted one dimensional list. Usage:</p>
+sorted one dimensional list. Usage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">alist</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">flatools</span><span class="o">.</span><span class="n">flatten_sorted</span><span class="p">(</span><span class="n">alist</span><span class="p">)</span>
 <span class="go">[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
